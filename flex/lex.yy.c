@@ -443,9 +443,8 @@ char *yytext;
 int chars = 0;
 int words = 0;
 int lines = 0;
-extern FILE *yyin; // Declaración externa de yyin para leer desde un archivo
+#line 447 "lex.yy.c"
 #line 448 "lex.yy.c"
-#line 449 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -662,9 +661,9 @@ YY_DECL
 		}
 
 	{
-#line 10 "conteo-flex-bison.l"
+#line 9 "conteo-flex-bison.l"
 
-#line 668 "lex.yy.c"
+#line 667 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -723,26 +722,26 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 11 "conteo-flex-bison.l"
+#line 10 "conteo-flex-bison.l"
 { words++; chars += yyleng; }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 12 "conteo-flex-bison.l"
+#line 11 "conteo-flex-bison.l"
 { chars++; lines++; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 13 "conteo-flex-bison.l"
+#line 12 "conteo-flex-bison.l"
 { chars++; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 14 "conteo-flex-bison.l"
+#line 13 "conteo-flex-bison.l"
 ECHO;
 	YY_BREAK
-#line 746 "lex.yy.c"
+#line 745 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1747,17 +1746,14 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 14 "conteo-flex-bison.l"
+#line 13 "conteo-flex-bison.l"
 
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 2) {
-        printf("Uso: %s archivo\n", argv[0]);
-        return 1;
-    }
+    char archivo[] = "archivo.txt"; // Nombre del archivo a leer
 
-    FILE *file = fopen(argv[1], "r");
+    FILE *file = fopen(archivo, "r");
     if (file == NULL) {
         perror("Error al abrir el archivo");
         return 1;

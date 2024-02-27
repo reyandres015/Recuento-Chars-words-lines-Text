@@ -4,7 +4,6 @@
 int chars = 0;
 int words = 0;
 int lines = 0;
-extern FILE *yyin; // Declaración externa de yyin para leer desde un archivo
 %}
 
 %%
@@ -13,14 +12,11 @@ extern FILE *yyin; // Declaración externa de yyin para leer desde un archivo
 .          { chars++; }
 %%
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc != 2) {
-        printf("Uso: %s archivo\n", argv[0]);
-        return 1;
-    }
+    char archivo[] = "archivo.txt"; // Nombre del archivo a leer
 
-    FILE *file = fopen(argv[1], "r");
+    FILE *file = fopen(archivo, "r");
     if (file == NULL) {
         perror("Error al abrir el archivo");
         return 1;
