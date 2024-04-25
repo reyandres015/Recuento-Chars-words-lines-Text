@@ -437,14 +437,18 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "conteo-flex-bison.l"
+/**
+ * @file conteo-flex-bison.l
+ * @brief This file contains the Lex code for counting characters, words, and lines in a text file.
+ */
 /* just like Unix wc */
-#line 3 "conteo-flex-bison.l"
+#line 8 "conteo-flex-bison.l"
 #include <stdio.h>
 int chars = 0;
 int words = 0;
 int lines = 0;
-#line 447 "lex.yy.c"
-#line 448 "lex.yy.c"
+#line 451 "lex.yy.c"
+#line 452 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -661,9 +665,9 @@ YY_DECL
 		}
 
 	{
-#line 9 "conteo-flex-bison.l"
+#line 14 "conteo-flex-bison.l"
 
-#line 667 "lex.yy.c"
+#line 671 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -722,26 +726,26 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "conteo-flex-bison.l"
+#line 15 "conteo-flex-bison.l"
 { words++; chars += yyleng; }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 11 "conteo-flex-bison.l"
+#line 16 "conteo-flex-bison.l"
 { chars++; lines++; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "conteo-flex-bison.l"
+#line 17 "conteo-flex-bison.l"
 { chars++; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "conteo-flex-bison.l"
+#line 18 "conteo-flex-bison.l"
 ECHO;
 	YY_BREAK
-#line 745 "lex.yy.c"
+#line 749 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1746,9 +1750,14 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 13 "conteo-flex-bison.l"
+#line 18 "conteo-flex-bison.l"
 
 
+/**
+ * @brief The main function reads a text file and counts the number of lines, words, and characters.
+ * 
+ * @return 0 if the program executed successfully, 1 otherwise.
+ */
 int main()
 {
     char archivo[] = "archivo.txt"; // Nombre del archivo a leer

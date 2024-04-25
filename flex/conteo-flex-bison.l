@@ -1,3 +1,8 @@
+/**
+ * @file conteo-flex-bison.l
+ * @brief This file contains the Lex code for counting characters, words, and lines in a text file.
+ */
+
 /* just like Unix wc */
 %{
 #include <stdio.h>
@@ -12,6 +17,11 @@ int lines = 0;
 .          { chars++; }
 %%
 
+/**
+ * @brief The main function reads a text file and counts the number of lines, words, and characters.
+ * 
+ * @return 0 if the program executed successfully, 1 otherwise.
+ */
 int main()
 {
     char archivo[] = "archivo.txt"; // Nombre del archivo a leer

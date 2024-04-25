@@ -1,3 +1,8 @@
+/**
+ * @file recuentoReglas.c
+ * @brief This program reads a file and counts the number of lines, words, and characters in the file.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <regex.h>
